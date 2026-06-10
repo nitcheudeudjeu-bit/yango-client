@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1012972154314",
+    "project_id": "yangoprojet-deab2",
+    "storage_bucket": "yangoprojet-deab2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012972154314:android:e9a76c62775e8cd52db333",
+        "android_client_info": {
+          "package_name": "com.yangoclient"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPZVnQcL6B1zAIYEZlCCrMemSwOugEcvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
