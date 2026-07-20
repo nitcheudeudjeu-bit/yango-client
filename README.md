@@ -61,8 +61,8 @@ npm run ios
 ![Carte avec course en cours](./screenshots/map.jpeg)
 ![carte](./screenshots/carte.jpeg)
 ![Alerte SOS](./screenshots/sos.jpeg)
-![attente_chauffeur](./attente_chauffeur.jpeg)
-![loading](./home.jpeg)
+![attente_chauffeur](./screenshots/attente_chauffeur.jpeg)
+![loading](./screenshots/home.jpeg)
 
 <!-- Ajoute ici 3-4 captures : écran de connexion, carte avec course en cours, écran de chat, déclenchement SOS -->
 <!-- Exemple : ![Écran d'accueil](./screenshots/home.png) -->
