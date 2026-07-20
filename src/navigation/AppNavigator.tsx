@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, forwardRef} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
@@ -25,7 +25,7 @@ import ChatScreen from '../screens/client/ChatScreen';
 
 const Stack = createStackNavigator();
 
-export default function AppNavigator() {
+const AppNavigator = forwardRef((props: any, ref: any) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
 
@@ -39,14 +39,19 @@ export default function AppNavigator() {
 
   if (loading) {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#1a1a2e'}}>
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#1a1a2e',
+      }}>
         <ActivityIndicator size="large" color="#00b4d8" />
       </View>
     );
   }
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={ref}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         {!user ? (
@@ -76,4 +81,6 @@ export default function AppNavigator() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+});
+
+export default AppNavigator;

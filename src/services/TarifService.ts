@@ -1,6 +1,6 @@
-const TARIF_BASE = 500;
-const TARIF_KM = 300;
-const TARIF_MINUTE = 50;
+const TARIF_BASE = 200;
+const TARIF_KM = 150;
+const TARIF_MINUTE = 25;
 
 export const MODES_VEHICULE = [
   {
@@ -8,7 +8,7 @@ export const MODES_VEHICULE = [
     nom: 'Moto',
     emoji: '🏍️',
     description: 'Rapide et economique',
-    multiplicateur: 0.7,
+    multiplicateur: 0.6,
     capacite: '1 personne',
   },
   {
@@ -24,7 +24,7 @@ export const MODES_VEHICULE = [
     nom: 'Confort',
     emoji: '🚙',
     description: 'Vehicule climatise',
-    multiplicateur: 1.3,
+    multiplicateur: 1.2,
     capacite: '4 personnes',
   },
   {
@@ -32,7 +32,7 @@ export const MODES_VEHICULE = [
     nom: 'Premium',
     emoji: '🏎️',
     description: 'Vehicule haut de gamme',
-    multiplicateur: 1.6,
+    multiplicateur: 1.4,
     capacite: '4 personnes',
   },
   {
@@ -40,16 +40,16 @@ export const MODES_VEHICULE = [
     nom: 'Van',
     emoji: '🚐',
     description: 'Pour groupes et bagages',
-    multiplicateur: 1.8,
+    multiplicateur: 1.5,
     capacite: '7 personnes',
   },
 ];
 
 const MULTIPLICATEURS_HORAIRES: any = {
-  heure_pointe_matin: 1.5,
-  heure_pointe_soir: 1.5,
-  nuit: 1.8,
-  weekend: 1.3,
+  heure_pointe_matin: 1.3,
+  heure_pointe_soir: 1.3,
+  nuit: 1.5,
+  weekend: 1.2,
   normal: 1.0,
 };
 
@@ -108,10 +108,10 @@ export const calculerTarifDynamique = (
 
 export const getLibelleType = (type: string) => {
   switch (type) {
-    case 'heure_pointe_matin': return 'Heure de pointe matin x1.5';
-    case 'heure_pointe_soir': return 'Heure de pointe soir x1.5';
-    case 'nuit': return 'Tarif nuit x1.8';
-    case 'weekend': return 'Tarif weekend x1.3';
+    case 'heure_pointe_matin': return 'Heure de pointe matin x1.3';
+    case 'heure_pointe_soir': return 'Heure de pointe soir x1.3';
+    case 'nuit': return 'Tarif nuit x1.5';
+    case 'weekend': return 'Tarif weekend x1.2';
     default: return 'Tarif normal';
   }
 };
