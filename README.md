@@ -69,7 +69,7 @@ npm run ios
 
 ## 🎥 Démo
 
-<!-- Ajoute ici un lien vers une courte vidéo de démo (YouTube non répertorié, ou GIF) -->
+![Démo de l'application](./screenshots/demo.gif)
 
 ## 🧩 Défis techniques rencontrés
 
