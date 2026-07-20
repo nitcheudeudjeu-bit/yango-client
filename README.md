@@ -1,79 +1,79 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Yango React — Application de VTC avec assistance d'urgence
 
-# Getting Started
+Application mobile de type VTC (client + chauffeur) développée en React Native, intégrant un système de sécurité avec alertes SOS géolocalisées. Le projet associe la commande de course classique à des consignes de secours adaptées selon le cas d'urgence.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Projet réalisé en équipe de 5 développeurs.
 
-## Step 1: Start the Metro Server
+## 🎯 Le projet
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Deux applications distinctes partageant un même backend Firebase :
+- **YangoClient** — l'app côté passager (commande de course, suivi en temps réel, chat, SOS)
+- **YangoDriver** — l'app côté chauffeur (réception de courses, navigation, gestion des trajets)
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## ✨ Fonctionnalités
+
+- **Authentification par rôle** (client / chauffeur)
+- **Carte interactive** via OpenStreetMap (Nominatim / Overpass) pour la géolocalisation et les itinéraires
+- **Tarification dynamique** — calcul du prix selon 5 modes de véhicule avec multiplicateurs horaires
+- **Suivi en temps réel** des courses via les listeners Firestore
+- **Chat intégré** par course entre client et chauffeur
+- **SOS géolocalisé** — déclenchement d'alerte avec position GPS envoyée en cas d'urgence, y compris par commande vocale
+- **Carte d'urgence** affichant les secours les plus proches
+- **Analyse d'image par IA** via l'appareil photo (intégration Claude API)
+- **Réservation à l'avance** de courses
+- **Paiement simulé** (MTN Mobile Money, Orange Money, Cash)
+
+## 🛠️ Stack technique
+
+- React Native 0.73.0
+- TypeScript
+- Firebase (Auth, Firestore, temps réel)
+- OpenStreetMap (Nominatim / Overpass API)
+- Claude API (analyse d'image)
+
+## 🚀 Installation
 
 ```bash
-# using npm
+# Cloner le repo
+git clone https://github.com/nitcheudeudjeu-bit/yangoReact.git
+cd yangoReact
+
+# Installer les dépendances
+npm install
+
+# Lancer Metro
 npm start
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
+# Dans un autre terminal — Android
 npm run android
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
+# Ou iOS
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### Prérequis
+- Environnement React Native configuré ([guide officiel](https://reactnative.dev/docs/environment-setup))
+- Un projet Firebase configuré (voir `google-services.json` / `GoogleService-Info.plist`)
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## 📱 Captures d'écran
 
-## Step 3: Modifying your App
+<!-- Ajoute ici 3-4 captures : écran de connexion, carte avec course en cours, écran de chat, déclenchement SOS -->
+<!-- Exemple : ![Écran d'accueil](./screenshots/home.png) -->
 
-Now that you have successfully run the app, let's modify it.
+## 🎥 Démo
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+<!-- Ajoute ici un lien vers une courte vidéo de démo (YouTube non répertorié, ou GIF) -->
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## 🧩 Défis techniques rencontrés
 
-## Congratulations! :tada:
+- Incompatibilité Firebase v24 → downgrade vers v18
+- Résolution de conflits de dépendances avec `react-native-vision-camera`
+- Gestion des timeouts AAPT2 et du pinning `minSdkVersion` / Kotlin
 
-You've successfully run and modified your React Native App. :partying_face:
+## 👥 Équipe
 
-### Now what?
+Projet développé en équipe de 5 développeurs dans le cadre du cours ICT202 (Mobile Development) — Université de Yaoundé I.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## 📄 Licence
 
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Projet académique — usage éducatif.
